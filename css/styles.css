@@ -544,7 +544,7 @@ h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; }
   white-space: nowrap;
 }
 .ticker-item i { font-size: 0.85rem; opacity: 0.85; }
-.ticker-sep { color: rgba(66,14,78,0.4); }
+.ticker-sep { display: none; }
 @keyframes ticker-scroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
