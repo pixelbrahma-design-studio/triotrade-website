@@ -855,6 +855,86 @@ h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; }
   color: rgba(255,255,255,0.6);
 }
 
+/* ── IMAGE SLIDER ────────────────────────────────────── */
+.about-slider {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  height: 480px;
+  background: var(--navy);
+  box-shadow: var(--shadow-xl);
+}
+
+.about-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+.about-slide.active { opacity: 1; }
+
+.about-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Gradient overlay at bottom */
+.about-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(11,37,69,0.75) 100%
+  );
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 2rem 1.75rem 1.5rem;
+  z-index: 2;
+}
+.slide-caption span {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+  font-family: var(--font);
+}
+.slide-caption p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.72);
+  font-family: var(--font);
+}
+
+/* Dot indicators */
+.slide-dots {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.5rem;
+  display: flex;
+  gap: 0.45rem;
+  z-index: 10;
+}
+.dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  cursor: pointer;
+  transition: all 0.32s var(--ease);
+  border: none;
+}
+.dot.active {
+  background: var(--orange);
+  width: 24px;
+  border-radius: 4px;
+}
+
 /* ── PRODUCTS ────────────────────────────────────────── */
 .products-section {
   padding: 5.5rem 0;
