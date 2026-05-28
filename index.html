@@ -520,11 +520,11 @@
 
       <div class="why-card">
         <div class="why-icon">
-          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-solid fa-handshake"></i>
         </div>
         <div>
-          <h4>24/7 WhatsApp Support</h4>
-          <p>Get instant responses any time — even Sundays. No wait times, no automated systems, just a real person ready to help.</p>
+          <h4>Dedicated Trade Support</h4>
+          <p>A dedicated team handles your enquiry from first quote to final delivery — no handoffs, no confusion, full accountability.</p>
         </div>
       </div>
 
@@ -599,7 +599,7 @@
           </div>
           <div>
             <h4>Office Hours</h4>
-            <p>Monday &ndash; Saturday: 9:00 AM &ndash; 6:30 PM<br>Sunday: Closed &nbsp;(WhatsApp available 24/7)</p>
+            <p>Monday &ndash; Saturday: 9:00 AM &ndash; 6:30 PM<br>Sunday: Closed</p>
           </div>
         </div>
 
@@ -620,7 +620,13 @@
         <h2>Send an Enquiry</h2>
         <p>Fill in your details and we'll respond within one business day. For urgent requirements, use WhatsApp above.</p>
 
-        <form action="mailto:tom@triotrade.in" method="post" enctype="text/plain" novalidate aria-label="Freight enquiry form">
+        <form action="https://api.web3forms.com/submit" method="POST" novalidate aria-label="Freight enquiry form" id="enquiryForm">
+          <!-- Web3Forms access key — replace YOUR_ACCESS_KEY with the key from web3forms.com -->
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
+          <input type="hidden" name="subject" value="New Freight Enquiry — Triotrade" />
+          <input type="hidden" name="from_name" value="Triotrade Website" />
+          <input type="hidden" name="redirect" value="false" />
+          <input type="checkbox" name="botcheck" style="display:none;" />
           <div class="form-row">
             <div class="form-group">
               <label for="name">Full Name <span class="req">*</span></label>
@@ -666,13 +672,15 @@
             <textarea id="message" name="Message" class="field field-textarea" placeholder="Describe your cargo, weight, dimensions, timeline, or any specific requirements..." required minlength="20"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-orange btn-block">
+          <button type="submit" class="btn btn-orange btn-block" id="submitBtn">
             <i class="fa-solid fa-paper-plane"></i> Send Enquiry
           </button>
 
+          <div id="formMsg" style="display:none; margin-top:1rem; padding:0.85rem 1rem; border-radius:10px; font-size:0.88rem; font-weight:600; text-align:center;"></div>
+
           <p class="form-note">
             <i class="fa-solid fa-info-circle"></i>
-            Submitting opens your email client with the message pre-filled. We respond within one business day.
+            We respond to all enquiries within one business day.
           </p>
         </form>
       </div>
@@ -785,6 +793,45 @@
       goToSlide(i);
     });
   });
+
+  // Web3Forms submission
+  const enquiryForm = document.getElementById('enquiryForm');
+  const submitBtn   = document.getElementById('submitBtn');
+  const formMsg     = document.getElementById('formMsg');
+
+  if (enquiryForm) {
+    enquiryForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(enquiryForm)
+      })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data.success) {
+          formMsg.style.display = 'block';
+          formMsg.style.background = '#E8F5E9';
+          formMsg.style.color = '#2E7D32';
+          formMsg.textContent = '✓ Enquiry sent successfully! We\'ll get back to you within one business day.';
+          enquiryForm.reset();
+          submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Sent';
+        } else {
+          throw new Error('Submission failed');
+        }
+      })
+      .catch(function () {
+        formMsg.style.display = 'block';
+        formMsg.style.background = '#FEEBE8';
+        formMsg.style.color = '#C62828';
+        formMsg.textContent = '✗ Something went wrong. Please email us directly at tom@triotrade.in';
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Enquiry';
+      });
+    });
+  }
 </script>
 </body>
 </html>

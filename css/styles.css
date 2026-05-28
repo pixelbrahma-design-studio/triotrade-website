@@ -230,14 +230,14 @@ h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; }
   line-height: 1;
 }
 .logo-img {
-  height: 48px;
+  height: 75px;
   width: auto;
   display: block;
   object-fit: contain;
+  padding: 8px 0;
 }
 .logo-img-footer {
-  height: 52px;
-  filter: brightness(0) invert(1);
+  height: 75px;
 }
 .logo-wordmark {
   font-size: 1.55rem;
@@ -1126,17 +1126,17 @@ footer {
 }
 .ft-brand .logo { margin-bottom: 1rem; }
 .ft-brand p {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.45);
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.55);
   line-height: 1.75;
   max-width: 270px;
 }
 .ft-reg {
   margin-top: 0.75rem;
-  font-size: 0.72rem !important;
-  color: rgba(255,255,255,0.3) !important;
-  line-height: 1.6 !important;
-  letter-spacing: 0.02em;
+  font-size: 0.88rem !important;
+  color: rgba(255,255,255,0.45) !important;
+  line-height: 1.75 !important;
+  letter-spacing: 0.01em;
 }
 .ft-col h5 {
   font-size: 0.72rem;
