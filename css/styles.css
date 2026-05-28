@@ -540,11 +540,11 @@ h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; }
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--white);
+  color: #420E4E;
   white-space: nowrap;
 }
 .ticker-item i { font-size: 0.85rem; opacity: 0.85; }
-.ticker-sep { color: rgba(255,255,255,0.4); }
+.ticker-sep { color: rgba(66,14,78,0.4); }
 @keyframes ticker-scroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -628,17 +628,17 @@ h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; }
 .svc-icon-wrap {
   width: 52px; height: 52px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.13);
-  border: 1.5px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.92);
+  border: 1.5px solid rgba(255,255,255,0.6);
   display: flex; align-items: center; justify-content: center;
   font-size: 1.3rem;
-  color: var(--white);
+  color: #420E4E;
   flex-shrink: 0;
   transition: background 0.28s, border-color 0.28s;
 }
 .svc-card:hover .svc-icon-wrap {
-  background: rgba(255,255,255,0.22);
-  border-color: rgba(255,255,255,0.4);
+  background: #ffffff;
+  border-color: rgba(255,255,255,0.9);
 }
 
 /* Title inside the header */
@@ -693,7 +693,7 @@ h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; }
   border: 1px solid rgba(66,14,78,0.1);
   letter-spacing: 0.01em;
 }
-.svc-pill i { font-size: 0.62rem; color: var(--orange); }
+.svc-pill i { font-size: 0.62rem; color: #420E4E; }
 
 /* CTA row */
 .svc-cta-row {
@@ -711,10 +711,10 @@ h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; }
   gap: 0.45rem;
   font-size: 0.83rem;
   font-weight: 700;
-  color: var(--green-wa);
+  color: #420E4E;
   transition: gap 0.2s;
 }
-.svc-wa-link i { font-size: 1rem; }
+.svc-wa-link i { font-size: 1rem; color: #420E4E; }
 .svc-wa-link:hover { gap: 0.7rem; }
 
 .svc-arr {
@@ -729,7 +729,7 @@ h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; }
 }
 .svc-card:hover .svc-arr {
   background: var(--orange);
-  color: var(--white);
+  color: #420E4E;
   transform: rotate(-45deg);
 }
 
@@ -1343,8 +1343,8 @@ footer {
   margin-bottom: 3px;
 }
 .cm-card p  { font-size: 0.83rem; color: var(--slate); line-height: 1.6; }
-.cm-card a  { color: var(--orange); font-weight: 600; transition: color var(--dur); }
-.cm-card a:hover { color: var(--orange-dark); }
+.cm-card a  { color: #420E4E; font-weight: 600; transition: color var(--dur); }
+.cm-card a:hover { color: var(--navy-light); }
 
 .wa-action-box {
   background: linear-gradient(135deg, var(--navy), var(--navy-mid));
