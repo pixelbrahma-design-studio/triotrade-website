@@ -77,14 +77,14 @@ h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; }
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--navy);
 }
 .label::before, .label::after {
   content: '';
   display: block;
   width: 20px;
   height: 2px;
-  background: var(--orange);
+  background: var(--navy);
   border-radius: 2px;
 }
 .section-tag {
@@ -607,7 +607,7 @@ h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; }
 .svc-head-navy   { background: linear-gradient(140deg, #1A0020 0%, #5C1570 100%); }
 .svc-head-orange { background: linear-gradient(140deg, #2A0935 0%, #420E4E 100%); }
 .svc-head-sky    { background: linear-gradient(140deg, #420E4E 0%, #7B1F94 100%); }
-.svc-head-green  { background: linear-gradient(140deg, #12391a 0%, #2E7D32 100%); }
+.svc-head-green  { background: linear-gradient(140deg, #1A0020 0%, #5C1570 100%); }
 
 /* Giant watermark number */
 .svc-num {
@@ -779,7 +779,7 @@ h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; }
 }
 .ab-highlight i {
   font-size: 1.1rem;
-  color: var(--orange);
+  color: var(--navy);
   margin-top: 2px;
   flex-shrink: 0;
 }
@@ -1334,7 +1334,7 @@ footer {
 .cmi-email { background: var(--navy-pale);       color: var(--navy); }
 .cmi-phone { background: var(--orange-pale);      color: var(--orange-dark); }
 .cmi-hours { background: #EDE7F6;                 color: #6A1B9A; }
-.cmi-loc   { background: #E8F5E9;                 color: #2E7D32; }
+.cmi-loc   { background: var(--navy-pale);         color: var(--navy); }
 
 .cm-card h4 {
   font-size: 0.88rem;
